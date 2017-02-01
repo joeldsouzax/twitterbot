@@ -1,3 +1,5 @@
+package src.main.java;
+
 
 import com.wolfram.alpha.*;
 import org.apache.commons.lang3.StringUtils;

@@ -29,7 +29,7 @@
 *.iws
 
 ## Plugin-specific files:
-
+*.iml
 # IntelliJ
 /out/
 

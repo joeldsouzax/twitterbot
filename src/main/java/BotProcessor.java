@@ -1,3 +1,5 @@
+package src.main.java;
+
 import twitter4j.*;
 import twitter4j.api.FavoritesResources;
 

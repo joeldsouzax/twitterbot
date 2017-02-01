@@ -66,6 +66,12 @@
             <artifactId>pi4j-core</artifactId>
             <version>1.1</version>
         </dependency>
+       <dependency>
+	    <groupId>org.wolframalpha</groupId>
+	    <artifactId>wolframalpha</artifactId>
+	    <version>1.1</version>
+	    <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/WolframAlpha-1.1.jar</systemPath>
+       </dependency>
     </dependencies>
-
 </project>
