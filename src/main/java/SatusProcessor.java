@@ -37,6 +37,7 @@ public class SatusProcessor implements Runnable{
                 tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
                 BotProcessor.statusQueue.remove();
             }else if(status.getText().toLowerCase().contains("blink")){
+                RaspberryPi.blink();
                 System.out.println("Check me out");
                 BotProcessor.statusQueue.remove();
             }else if(status.getText().toLowerCase().contains("?")){
