@@ -1,2 +1,7 @@
-/Users/joel/git/tweetbot/src/main/java/Main.java
-/Users/joel/git/tweetbot/src/main/java/ReadProperties.java
+/home/pi/git/twitterbot/src/main/java/ReadProperties.java
+/home/pi/git/twitterbot/src/main/java/Auth.java
+/home/pi/git/twitterbot/src/main/java/RaspberryPi.java
+/home/pi/git/twitterbot/src/main/java/StreamTwitter.java
+/home/pi/git/twitterbot/src/main/java/BotClient.java
+/home/pi/git/twitterbot/src/main/java/BotProcessor.java
+/home/pi/git/twitterbot/src/main/java/SatusProcessor.java

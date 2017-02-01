@@ -1,0 +1,130 @@
+Project documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/bin/javadoc
+-sourcepath
+/home/pi/git/twitterbot
+-source
+1.8
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.8.2.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/home/pi/git/twitterbot
+-d
+/home/pi/git/twitterbot/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/usr/share/bluej/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+-doctitle
+twitterbot
+-windowtitle
+twitterbot
+-author
+-version
+-nodeprecated
+-package
+-link
+http://download.oracle.com/javase/8/docs/api/
+src.main.java
+<---- end of javadoc command ---->
+Loading source files for package src.main.java...
+Constructing Javadoc information...
+/home/pi/git/twitterbot/src/main/java/BotClient.java:3: error: package org.apache.commons.codec.binary does not exist
+import org.apache.commons.codec.binary.Base64;
+                                      ^
+/home/pi/git/twitterbot/src/main/java/BotClient.java:4: error: package twitter4j does not exist
+import twitter4j.Status;
+                ^
+/home/pi/git/twitterbot/src/main/java/BotProcessor.java:3: error: package twitter4j does not exist
+import twitter4j.*;
+^
+/home/pi/git/twitterbot/src/main/java/BotProcessor.java:4: error: package twitter4j.api does not exist
+import twitter4j.api.FavoritesResources;
+                    ^
+/home/pi/git/twitterbot/src/main/java/Auth.java:3: error: package twitter4j does not exist
+import twitter4j.Twitter;
+                ^
+/home/pi/git/twitterbot/src/main/java/Auth.java:4: error: package twitter4j does not exist
+import twitter4j.TwitterFactory;
+                ^
+/home/pi/git/twitterbot/src/main/java/Auth.java:5: error: package twitter4j does not exist
+import twitter4j.TwitterStream;
+                ^
+/home/pi/git/twitterbot/src/main/java/Auth.java:6: error: package twitter4j does not exist
+import twitter4j.TwitterStreamFactory;
+                ^
+/home/pi/git/twitterbot/src/main/java/Auth.java:7: error: package twitter4j.conf does not exist
+import twitter4j.conf.ConfigurationBuilder;
+                     ^
+/home/pi/git/twitterbot/src/main/java/BotProcessor.java:16: error: cannot find symbol
+    public static Queue<Status> statusQueue = new LinkedList<Status>();
+                        ^
+  symbol:   class Status
+  location: class BotProcessor
+/home/pi/git/twitterbot/src/main/java/Auth.java:16: error: cannot find symbol
+    private TwitterFactory tweetFact;
+            ^
+  symbol:   class TwitterFactory
+  location: class Auth
+/home/pi/git/twitterbot/src/main/java/Auth.java:17: error: cannot find symbol
+    private Twitter twitter;
+            ^
+  symbol:   class Twitter
+  location: class Auth
+/home/pi/git/twitterbot/src/main/java/Auth.java:18: error: cannot find symbol
+    private TwitterStream tweetStream;
+            ^
+  symbol:   class TwitterStream
+  location: class Auth
+/home/pi/git/twitterbot/src/main/java/Auth.java:47: error: cannot find symbol
+    public Twitter getTwitter() {
+           ^
+  symbol:   class Twitter
+  location: class Auth
+/home/pi/git/twitterbot/src/main/java/Auth.java:51: error: cannot find symbol
+    public TwitterStream getTweetStream() {
+           ^
+  symbol:   class TwitterStream
+  location: class Auth
+/home/pi/git/twitterbot/src/main/java/SatusProcessor.java:4: error: package com.wolfram.alpha does not exist
+import com.wolfram.alpha.*;
+^
+/home/pi/git/twitterbot/src/main/java/SatusProcessor.java:5: error: package org.apache.commons.lang3 does not exist
+import org.apache.commons.lang3.StringUtils;
+                               ^
+/home/pi/git/twitterbot/src/main/java/SatusProcessor.java:6: error: package twitter4j does not exist
+import twitter4j.Status;
+                ^
+/home/pi/git/twitterbot/src/main/java/StreamTwitter.java:3: error: package twitter4j does not exist
+import twitter4j.*;
+^
+/home/pi/git/twitterbot/src/main/java/StreamTwitter.java:63: error: cannot find symbol
+    public void passStatus(Status status){
+                           ^
+  symbol:   class Status
+  location: class StreamTwitter
+Standard Doclet version 1.8.0_65
+Building tree for all the packages and classes...
+Generating /home/pi/git/twitterbot/doc/src/main/java/Auth.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/BotClient.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/BotProcessor.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/RaspberryPi.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/ReadProperties.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/SatusProcessor.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/StreamTwitter.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/package-frame.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/package-summary.html...
+Generating /home/pi/git/twitterbot/doc/src/main/java/package-tree.html...
+Generating /home/pi/git/twitterbot/doc/constant-values.html...
+Building index for all the packages and classes...
+Generating /home/pi/git/twitterbot/doc/overview-tree.html...
+Generating /home/pi/git/twitterbot/doc/index-all.html...
+Building index for all classes...
+Generating /home/pi/git/twitterbot/doc/allclasses-frame.html...
+Generating /home/pi/git/twitterbot/doc/allclasses-noframe.html...
+Generating /home/pi/git/twitterbot/doc/index.html...
+Generating /home/pi/git/twitterbot/doc/help-doc.html...
+Generating /home/pi/git/twitterbot/doc/stylesheet.css...
+20 warnings

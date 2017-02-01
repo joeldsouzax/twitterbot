@@ -1,3 +1,5 @@
+package src.main.java;
+
 import org.apache.commons.codec.binary.Base64;
 import twitter4j.Status;
 
