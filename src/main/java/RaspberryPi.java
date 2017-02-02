@@ -9,9 +9,8 @@ public class RaspberryPi {
 
     static void blink(){
         GpioController gpio = GpioFactory.getInstance();
-        GpioPinDigitalOutput myLed  = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04,"My LED",PinState.LOW);
-        myLed.setShutdownOptions(true,PinState.LOW);
-        myLed.pulse(5000,true);
+        GpioPinDigitalOutput myLed  = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_18,"My LED",PinState.HIGH);
+        myLed.high(); 
         gpio.shutdown();
     }
 }

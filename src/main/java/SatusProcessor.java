@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class SatusProcessor implements Runnable{
 
     private BotProcessor tweetProcessor = new BotProcessor();
-    private ReadProperties twitterProperties = new ReadProperties("src/main/conf/api.properties");
+    private ReadProperties twitterProperties = new ReadProperties("/home/pi/git/twitterbot/src/main/conf/api.properties");
     private Boolean gotResponse = false;
     private String appid;
 
