@@ -1,16 +1,4 @@
-package src.main.java;
-
-import org.apache.commons.codec.binary.Base64;
-import twitter4j.Status;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
+package TweetEngine;
 
 
 /**

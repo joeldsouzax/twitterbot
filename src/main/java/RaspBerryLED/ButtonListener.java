@@ -1,4 +1,4 @@
-package RaspberryPi;
+package RaspBerryLED;
 
 /**
  * Created by joel on 02/02/17.

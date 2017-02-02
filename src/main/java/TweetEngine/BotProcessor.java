@@ -1,9 +1,7 @@
-package src.main.java;
+package TweetEngine;
 
 import twitter4j.*;
-import twitter4j.api.FavoritesResources;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package RaspberryPi;
+package RaspBerryLED;
 
 import com.pi4j.io.gpio.*;
 

@@ -1,16 +1,13 @@
+package TweetEngine;
 
 
-
-import RaspberryPi.LED;
+import RaspBerryLED.LED;
 import com.wolfram.alpha.*;
 import org.apache.commons.lang3.StringUtils;
 import twitter4j.Status;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by joel on 28/01/17.
@@ -31,9 +28,9 @@ public class SatusProcessor implements Runnable{
     synchronized public void processStatus() throws InterruptedException{
 
         if (!BotProcessor.statusQueue.isEmpty()){
-            Status status = src.main.java.BotProcessor.statusQueue.element();
+            Status status = BotProcessor.statusQueue.element();
             String StatusText = status.getText().toLowerCase();
-            String processedText = cleanText(StatusText, src.main.java.BotClient.tweetKeyword);
+            String processedText = cleanText(StatusText,BotClient.tweetKeyword);
             System.out.println(processedText);
             if(status.getText().toLowerCase().contains("retweet")){
                 tweetProcessor.retweetStatus(String.valueOf(status.getId()));
@@ -80,7 +77,11 @@ public class SatusProcessor implements Runnable{
 
     public void run() {
         while (true){
-            processStatus();
+            try {
+                processStatus();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

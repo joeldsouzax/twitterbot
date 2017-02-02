@@ -1,4 +1,4 @@
-package src.main.java;
+package TweetEngine;
 
 import twitter4j.*;
 
