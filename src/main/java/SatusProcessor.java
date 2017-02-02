@@ -1,6 +1,7 @@
-package src.main.java;
 
 
+
+import RaspberryPi.LED;
 import com.wolfram.alpha.*;
 import org.apache.commons.lang3.StringUtils;
 import twitter4j.Status;
@@ -20,26 +21,29 @@ public class SatusProcessor implements Runnable{
     private ReadProperties twitterProperties = new ReadProperties("/home/pi/git/twitterbot/src/main/conf/api.properties");
     private Boolean gotResponse = false;
     private String appid;
+    LED red = new LED(1);
+    LED green = new LED(7);
 
     public SatusProcessor() {
         appid = twitterProperties.getProperty("wolfram.alpha.appId");
     }
 
-    synchronized public void processStatus(){
+    synchronized public void processStatus() throws InterruptedException{
 
         if (!BotProcessor.statusQueue.isEmpty()){
-            Status status = BotProcessor.statusQueue.element();
+            Status status = src.main.java.BotProcessor.statusQueue.element();
             String StatusText = status.getText().toLowerCase();
-            String processedText = cleanText(StatusText,BotClient.tweetKeyword);
+            String processedText = cleanText(StatusText, src.main.java.BotClient.tweetKeyword);
             System.out.println(processedText);
             if(status.getText().toLowerCase().contains("retweet")){
                 tweetProcessor.retweetStatus(String.valueOf(status.getId()));
+                red.tweet();
                 BotProcessor.statusQueue.remove();
             }else if (status.getText().toLowerCase().contains("favourite")){
                 tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
+                green.tweet();
                 BotProcessor.statusQueue.remove();
             }else if(status.getText().toLowerCase().contains("blink")){
-                RaspberryPi.blink();
                 System.out.println("Check me out");
                 BotProcessor.statusQueue.remove();
             }else if(status.getText().toLowerCase().contains("?")){
@@ -56,15 +60,19 @@ public class SatusProcessor implements Runnable{
                             finalResponse = Response;
                         }
                         System.out.println("This is the cut response! \n"+finalResponse);
+                        red.pulse();
+                        green.pulse();
                         tweetProcessor.replyTweet(String.valueOf(status.getId()),finalResponse);
 
                     }
                 }else{
                     tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
+                    green.tweet();
                 }
                 BotProcessor.statusQueue.remove();
             }else {
                 tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
+                green.tweet();
                 BotProcessor.statusQueue.remove();
             }
         }
