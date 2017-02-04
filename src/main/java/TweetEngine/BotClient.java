@@ -6,8 +6,8 @@ package TweetEngine;
  */
 public class BotClient {
 
-    private static ReadProperties searchProperties = new ReadProperties("/home/pi/git/twitterbot/src/main/conf/api.properties");
-    public static String[] tweetKeyword = new String[]{"#joeltestingouthisbot"};
+    private static ReadProperties searchProperties = new ReadProperties("/Users/joel/git/twitterbot/src/main/conf/api.properties");
+    public static String[] tweetKeyword = new String[]{"#xaviersIT"};
     public static String[] language = new String[]{"en"};
 
 

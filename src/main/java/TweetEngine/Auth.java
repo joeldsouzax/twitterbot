@@ -16,7 +16,7 @@ abstract public class Auth {
     private TwitterFactory tweetFact;
     private Twitter twitter;
     private TwitterStream tweetStream;
-    private ReadProperties twitterProperties = new ReadProperties("/home/pi/git/twitterbot/src/main/conf/api.properties");
+    private ReadProperties twitterProperties = new ReadProperties("/Users/joel/git/twitterbot/src/main/conf/api.properties");
 
     public Auth() {
         ConfigurationBuilder conf = new ConfigurationBuilder();

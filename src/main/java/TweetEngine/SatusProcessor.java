@@ -6,7 +6,9 @@ import com.wolfram.alpha.*;
 import org.apache.commons.lang3.StringUtils;
 import twitter4j.Status;
 
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,11 +17,11 @@ import java.util.List;
 public class SatusProcessor implements Runnable{
 
     private BotProcessor tweetProcessor = new BotProcessor();
-    private ReadProperties twitterProperties = new ReadProperties("/home/pi/git/twitterbot/src/main/conf/api.properties");
+    private ReadProperties twitterProperties = new ReadProperties("/Users/joel/git/twitterbot/src/main/conf/api.properties");
     private Boolean gotResponse = false;
     private String appid;
-    LED red = new LED(1);
-    LED green = new LED(7);
+    //LED red = new LED(1);
+    //LED green = new LED(7);
 
     public SatusProcessor() {
         appid = twitterProperties.getProperty("wolfram.alpha.appId");
@@ -34,11 +36,11 @@ public class SatusProcessor implements Runnable{
             System.out.println(processedText);
             if(status.getText().toLowerCase().contains("retweet")){
                 tweetProcessor.retweetStatus(String.valueOf(status.getId()));
-                red.tweet();
+                //red.tweet();
                 BotProcessor.statusQueue.remove();
             }else if (status.getText().toLowerCase().contains("favourite")){
                 tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
-                green.tweet();
+                //green.tweet();
                 BotProcessor.statusQueue.remove();
             }else if(status.getText().toLowerCase().contains("blink")){
                 System.out.println("Check me out");
@@ -57,19 +59,19 @@ public class SatusProcessor implements Runnable{
                             finalResponse = Response;
                         }
                         System.out.println("This is the cut response! \n"+finalResponse);
-                        red.pulse();
-                        green.pulse();
+                        //red.pulse();
+                        //green.pulse();
                         tweetProcessor.replyTweet(String.valueOf(status.getId()),finalResponse);
 
                     }
                 }else{
                     tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
-                    green.tweet();
+                    //green.tweet();
                 }
                 BotProcessor.statusQueue.remove();
             }else {
                 tweetProcessor.favoriteStatus(String.valueOf(status.getId()));
-                green.tweet();
+                //green.tweet();
                 BotProcessor.statusQueue.remove();
             }
         }
@@ -79,6 +81,7 @@ public class SatusProcessor implements Runnable{
         while (true){
             try {
                 processStatus();
+                //BotProcessor.killThread.add(Date.from(Instant.now()));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
